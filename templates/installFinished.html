@@ -1,0 +1,16 @@
+{{ define "installFinishPage" }}
+
+{{/* loading the header template */}}
+{{ template "header" }}
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="twelve column" style="margin-top: 20px; text-align: center;">
+                <h3>{{ .Header.Title }}</h3>
+                <p>{{ .Intro }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{{ end }}

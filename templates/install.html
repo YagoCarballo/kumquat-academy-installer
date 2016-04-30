@@ -1,0 +1,87 @@
+{{ define "installPage" }}
+
+{{/* loading the header template */}}
+{{ template "header" }}
+<body>
+    <form method="post" action="do-install" onsubmit="startLoading()">
+        <div class="container">
+            <div class="row">
+                <div class="twelve column" style="margin-top: 20px; text-align: center;">
+                    <h3>{{ .Header.Title }}</h3>
+                    <p>{{ .Intro }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <h5>Page Info</h5>
+            </div>
+            <div class="row">
+                <label for="page-title">Title</label>
+                <input class="u-full-width" type="text" placeholder="Kumquat Academy" id="page-title" name="page-title" required>
+            </div>
+            <div class="row">
+                <label for="page-description">Description</label>
+                <input class="u-full-width" type="text" placeholder="Kumquat Academy - Learning Platform" id="page-description" name="page-description" required>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <label for="server-port">Server Port</label>
+                    <input class="u-full-width" type="number" placeholder="3000" id="server-port" name="server-port" required>
+                </div>
+            </div>
+            <div class="row">
+                <h5>Database Info</h5>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <label for="db-type">The Database Type</label>
+                    <select class="u-full-width" id="db-type" name="db-type" required>
+                        {{ range .DatabaseTypes }}
+                        <option value="{{ . }}"> {{ . }} </option>
+                        {{ end }}
+                    </select>
+                </div>
+                <div class="six columns">
+                    <label for="db-name">The Database Name</label>
+                    <input class="u-full-width" type="text" placeholder="KumquatAcademyDB" id="db-name" name="db-name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <label for="db-host">The Database Host</label>
+                    <input class="u-full-width" type="text" placeholder="localhost" id="db-host" name="db-host" required>
+                </div>
+                <div class="six columns">
+                    <label for="db-port">The Database Port</label>
+                    <input class="u-full-width" type="number" placeholder="3306" id="db-port" name="db-port" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <label for="db-username">The Database Username</label>
+                    <input class="u-full-width" type="text" placeholder="admin" id="db-username" name="db-username" required>
+                </div>
+                <div class="six columns">
+                    <label for="db-password">The Database Password</label>
+                    <input class="u-full-width" type="password" placeholder="admin" id="db-password" name="db-password" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <label class="create-tables u-full-width">
+                        <input type="checkbox" id="db-create" name="db-create" checked>
+                        <span class="label-body">Create Tables</span>
+                    </label>
+                    <label class="insert-sample-data u-full-width">
+                        <input type="checkbox" id="db-demo" name="db-demo" checked>
+                        <span class="label-body">Insert Sample Data</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;margin-bottom: 20px;">
+                <input class="button-primary u-full-width" type="submit" value="Start Installation">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+{{ end }}

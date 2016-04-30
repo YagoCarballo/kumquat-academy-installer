@@ -1,0 +1,3 @@
+Demo user data downloaded from the https://randomuser.me/ project in which all randomly generated photos are
+copyrighted under a Creative Commons BY-NC-SA 2.0 license. These photos were hand picked
+from Greg Peverill-Conti's 1,000 faces project (http://www.flickr.com/photos/gregpc/).
